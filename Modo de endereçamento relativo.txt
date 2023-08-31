@@ -1,0 +1,22 @@
+.data
+.text
+.globl main
+
+main:
+    # Instruções anteriores
+    
+    # Verificar a condição (suponha que $t0 contém o valor da condição)
+    beq $t0, $zero, nao_salta   # Salto se $t0 for igual a 0
+    
+    # Salto condicional atingido, pular 10 instruções à frente
+    b pulo
+    nop
+    
+nao_salta:
+    # Continuar sequencialmente
+    
+pulo:
+    # Continuar a partir daqui (10 instruções à frente)
+    
+    # Instruções posteriores
+

@@ -1,0 +1,18 @@
+.data
+result: .word 0  # Espaço para armazenar o resultado
+
+.text
+.globl main
+
+main:
+    li $t0, 0      # Inicializa o contador
+    li $t1, 0      # Inicializa o acumulador
+
+loop:
+    addi $t1, $t1, $t0  # Soma o valor do contador ao acumulador
+    addi $t0, $t0, 1    # Incrementa o contador
+
+    li $t2, 21          # Valor limite (21)
+    bne $t0, $t2, loop  # Salta de volta ao loop enquanto o contador não atingir 21
+
+    sw $t1, result      # Armazena o resultado na memória

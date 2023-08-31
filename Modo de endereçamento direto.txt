@@ -1,0 +1,3 @@
+
+# Carrega o valor do endereço 2005 em $t0
+lw $t0, 2005($zero)

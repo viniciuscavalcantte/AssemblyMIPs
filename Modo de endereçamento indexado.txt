@@ -1,0 +1,11 @@
+# Carregando o valor de base
+lw $t0, 0($r1)   # Carrega o valor no endereço base (registrador R1) para o registrador $t0
+
+# Calculando o endereço indexado
+li $t1, 5        # Carrega o índice (5) para o registrador $t1
+sll $t1, $t1, 2  # Multiplica o índice por 4 (tamanho de uma palavra na memória)
+
+add $t0, $t0, $t1  # Adiciona o deslocamento indexado ao valor no registrador $t0
+
+# Agora $t0 contém o valor no índice 5 usando endereçamento indexado com base em R1
+
