@@ -1,22 +1,30 @@
-.data
 .text
 .globl main
 
 main:
-    # Instruções anteriores
-    
-    # Verificar a condição (suponha que $t0 contém o valor da condição)
-    beq $t0, $zero, nao_salta   # Salto se $t0 for igual a 0
-    
-    # Salto condicional atingido, pular 10 instruções à frente
-    b pulo
-    nop
-    
-nao_salta:
-    # Continuar sequencialmente
-    
-pulo:
-    # Continuar a partir daqui (10 instruções à frente)
-    
-    # Instruções posteriores
+    # Suponha que $t0 contenha o valor da condição
+    # Verifica se $t0 é igual a 1 (condição atendida)
+    beq $t0, $zero, condicao_nao_atendida
 
+    # Condição atendida, avançar 10 instruções
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    j fim_programa
+
+condicao_nao_atendida:
+    # Condição não atendida, continuar sequencialmente
+
+fim_programa:
+    # Final do programa
+
+    # Encerrar o programa
+    li $v0, 10         # Carrega o código de saída do programa (10)
+    syscall
